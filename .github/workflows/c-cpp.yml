@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v4
     - name: go to directory
       run: cd indexcylla-cpp
-    - name: make all
-      run: make all
+    - name: make indexcylla
+      run: make indexcylla
     - name: make clean
       run: make clean
