@@ -28,8 +28,9 @@ install-deps:
 	sudo apt-get install -y libssl-dev libuv1-dev 
 	# Para el driver de ScyllaDB, compilar desde fuente:
 	sudo git clone https://github.com/scylladb/cpp-driver.git
-	cd cpp-driver && sudo mkdir build && cd build
-	sudo cmake .. && sudo make && sudo make install
+	cd cpp-driver #&& sudo mkdir build && cd build
+	sudo make
+	sudo make install
 
 
 # Instalar dependencias (CentOS/RHEL)
