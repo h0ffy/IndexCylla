@@ -12,6 +12,9 @@ ADVANCED_SRC = indexcylla-cpp/src/indexcylla.cpp
 # Targets
 all: indexcylla_example indexcylla
 
+
+
+
 indexcylla_example: $(BASIC_SRC)
 	$(CXX) $(CXXFLAGS) -o $@ $< $(LDFLAGS)
 
@@ -27,6 +30,12 @@ install-deps:
 	# git clone https://github.com/scylladb/cpp-driver.git
 	# cd cpp-driver && mkdir build && cd build
 	# cmake .. && make && sudo make install
+
+	sudo wget https://github.com/scylladb/cpp-driver/releases/download/2.15.2-1/scylla-cpp-driver_2.15.2-1_amd64.deb https://github.com/scylladb/cpp-driver/releases/download/2.15.2-1/scylla-cpp-driver-dev_2.15.2-1_amd64.deb
+	sudo apt-get update
+	sudo apt-get install -y ./scylla-cpp-driver_2.15.2-1_amd64.deb ./scylla-cpp-driver-dev_2.15.2-1_amd64.deb
+
+
 
 # Instalar dependencias (CentOS/RHEL)
 install-deps-centos:
