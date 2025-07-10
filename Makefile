@@ -25,16 +25,11 @@ indexcylla: $(ADVANCED_SRC)
 install-deps:
 	sudo apt-get update
 	sudo apt-get install -y build-essential cmake
-	sudo apt-get install -y libssl-dev libuv1-dev
+	sudo apt-get install -y libssl-dev libuv1-dev 
 	# Para el driver de ScyllaDB, compilar desde fuente:
-	# git clone https://github.com/scylladb/cpp-driver.git
-	# cd cpp-driver && mkdir build && cd build
-	# cmake .. && make && sudo make install
-
-	sudo wget https://github.com/scylladb/cpp-driver/releases/download/2.15.2-1/scylla-cpp-driver_2.15.2-1_amd64.deb https://github.com/scylladb/cpp-driver/releases/download/2.15.2-1/scylla-cpp-driver-dev_2.15.2-1_amd64.deb
-	sudo apt-get update
-	sudo apt-get install -y ./scylla-cpp-driver_2.15.2-1_amd64.deb ./scylla-cpp-driver-dev_2.15.2-1_amd64.deb
-
+	sudo git clone https://github.com/scylladb/cpp-driver.git
+	cd cpp-driver && sudo mkdir build && cd build
+	sudo cmake .. && sudo make && sudo make install
 
 
 # Instalar dependencias (CentOS/RHEL)
